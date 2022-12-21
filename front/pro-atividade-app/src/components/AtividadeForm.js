@@ -43,7 +43,6 @@ export default function AtividadeForm(props) {
 
   return (
     <>
-      <h1>Atividades {atividade.id !== 0 ? atividade.id : ""}</h1>
       <form className="row g-3" onSubmit={handleSubmit}>
         <div className="col-md-6">
           <label className="form-label">Título</label>
@@ -65,10 +64,10 @@ export default function AtividadeForm(props) {
             id="prioridade"
             className="form-select"
           >
-            <option defaultValue="0">Selecione...</option>
-            <option value="1">Baixa</option>
-            <option value="2">Normal</option>
-            <option value="3">Alta</option>
+            <option value="NaoDefinido">Selecione...</option>
+            <option value="Baixa">Baixa</option>
+            <option value="Normal">Normal</option>
+            <option value="Alta">Alta</option>
           </select>
         </div>
 
@@ -86,8 +85,9 @@ export default function AtividadeForm(props) {
         </div>
         <div className="col-12 mt-0">
           {atividade.id === 0 ? (
-            <button className="btn btn-outline-secondary" type="submit">
-              Adicionar
+            <button className="btn btn-outline-success" type="submit">
+              <i className="fas fa-plus me-2"></i>
+              Salvar
             </button>
           ) : (
             <>
