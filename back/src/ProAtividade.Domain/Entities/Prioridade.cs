@@ -1,4 +1,5 @@
-namespace ProAtividade.API.Models
+namespace ProAtividade.Domain.Entities
+
 {
     public enum Prioridade
     {
