@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 export default function Menu() {
   return (
     <div>
-      <Navbar bg='dark' expand='lg' variant='dark'>
+      <Navbar bg="dark" expand="lg" variant="dark">
         <Container>
           <Navbar.Brand as={NavLink} to="/">
             Ativy
@@ -13,13 +13,17 @@ export default function Menu() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link
-                activeClassName="active"
+                ClassName={(navData) => (navData.isActive ? "Active" : "")}
                 as={NavLink}
                 to="/cliente/lista"
               >
                 Clientes
               </Nav.Link>
-              <Nav.Link activeClassName="active" as={NavLink} to="/atividade/lista">
+              <Nav.Link
+                ClassName={(navData) => (navData.isActive ? "Active" : "")}
+                as={NavLink}
+                to="/atividade/lista"
+              >
                 Atividades
               </Nav.Link>
             </Nav>
